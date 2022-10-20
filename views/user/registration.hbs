@@ -1,0 +1,39 @@
+<body onload="generate()">
+    <div class="login-page">
+        <div class="form">
+    <h1 >
+    Gamer Management
+</h1>
+<h3>
+    Registration
+</h3>
+<form action="/signup" method="POST" class="register-form" >
+    <input type="text" name="email"placeholder="Email Address" />
+   
+    <input type="password" name="password"  placeholder="Password" id="pwd" name="password"/>
+    <input type="password"  placeholder="Confirm Password"  name="confirmPassword" id="cpwd" onfocusout="matchPassword()"/>
+    
+    <input type="text" name="firstName" placeholder="First Name" />
+
+    <input type="text" name="lastName" placeholder="Last Name" />
+   
+    <input type="date" name="dateOfBirth" placeholder="Date Of Birth" />
+   
+    <div id="image" class="inline" selectable="False" name="image">
+    </div>
+    <input type="text" id="captchaCode" placeholder="Type the character you see" name="captchaCode"/>  
+    <div style="color: red">
+            {{user.emailError}}
+            {{user.firstNameError}}
+            {{user.lastNameError}}
+             {{user.dateOfBirthError}}
+            <p id="confirmPasswordError"></p>
+    </div>
+    <button type="submit" onmouseenter="printmsg()"  id="Create">Create</button>
+    <p class="message">Already registered? <a href="../">Sign In</a>
+    </p>
+    
+</form>
+        </div>
+    </div>
+</body>

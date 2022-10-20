@@ -1,0 +1,17 @@
+<body onload="generate()">
+    <div class="login-page">
+        <div class="form">
+<h1>GAMER MANAGEMENT</h1>
+<h3>
+    LogIn
+</h3>
+    <form action="/" method="POST" class="login-form">
+      <input type="text" placeholder="username" name="username" required/>
+      <input type="password" placeholder="password" name="password"/>
+      <p style="color: red;">{{ErrorMessage}}</p>
+      <button type="submit">login</button>
+      <p class="message">Not registered? <a href="signup">Create an account</a></p>
+    </form>
+            </div>
+    </div>
+</body>
