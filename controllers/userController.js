@@ -1,3 +1,5 @@
+//Controller Part//
+
 const express = require('express');
 var router = express.Router();
 const monogose= require('mongoose');
@@ -30,9 +32,13 @@ function insertRecord(req,res){
                     res.render("user/registration", {
                         user: req.body
                     });
+                    
                 }
                 else
                     console.log('Error during record insertion : ' + err);
+                
+                
+                
             }
         });
     
@@ -56,12 +62,12 @@ function insertRecord(req,res){
     }
 }
 
-router.get('/',(req,res)=>{
+router.get('/',(req,res) =>{
     res.render("user/login", {
         ErrorMessage: ""
     });
 });
-router.post("/",(req,res)=> {
+router.post("/",(req,res) => {
     validateUser(req,res);
 });
  function validateUser(req,res){
