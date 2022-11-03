@@ -8,5 +8,5 @@ We are using the Javascript language with Node .js runtime platform.....
 In this project, there are mainly three category of users the ADMINISTRATOR, REGULAR USER, ELEVATED ACCESS USER. The pages of the module consists of LOGIN/SIGNUP, WELCOME, PROFILE,
 ADD USER, ACESS REQUEST,CRUD OPERATION pages and so on. 
 After the progressive working on the module,  wireframe, prototype, etc.. , now our role is changed to Database Analyst.
-Furthermore, we are now connecting with GitHub.
+Furthermore, we are now connecting with GitHub. The main repository connects with all the repositories of team members 
 
