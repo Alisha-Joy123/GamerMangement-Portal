@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
+    userId: {
+        type: String
+    },
     firstName: {
         type: String,
         required: 'First name is required.'
@@ -18,10 +21,25 @@ var userSchema = new mongoose.Schema({
     email: {
         type: String
     },
+    accessType: {
+        type: String
+    },
+    phoneNumber: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    department: {
+        type: String
+    },
     password: {
         type: String,
         required: 'Password is required.'
 
+    },
+    requestStatus: {
+        type: String
     }
 });
 
