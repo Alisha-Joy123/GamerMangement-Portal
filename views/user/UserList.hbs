@@ -1,0 +1,43 @@
+<h3>User List<a class="btn btn-secondary" href="/AddUser"><i class="fa fa-plus"></i> Create New</a></h3>
+<form action="/EditUser" method="POST">
+    <label for="Department">Department: </label>
+    
+    <select name="department"  style="width: 30%;">
+        <option value="">All</option>
+        <option value="Real -Time Strategy">Real -Time Strategy</option>
+        <option value="Technology">Technology</option>
+        <option value="Board Game">Board Game</option>
+        <option value="Card Game">Card Game</option>
+        <option value="Arcade Game">Arcade Game</option>
+    </select> 
+     <button type="submit"   id="Edit" style="visibility: {{showEditButton}}">Search</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Access Type</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td>{{this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.userType}}</td>
+            <td>{{this.department}}</td>
+            <td>
+                <a href="">View</a>
+                /
+                <a href="/{{this._id}}">Edit</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
