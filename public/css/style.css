@@ -1,5 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+ .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
 
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 200%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 30px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -8,7 +38,7 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background-color: #05040494;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -60,6 +90,7 @@
   z-index: 1;
   max-width: 300px;
   margin: 0 auto;
+  background-color: #05040494;
 }
 .container:before, .container:after {
   content: "";
@@ -96,7 +127,7 @@ color:green;
 #image{
     margin-top: 10px;
     width: 227px;
-    padding: 19px;
+    padding: 0px;
     font-weight: 400;
     padding-bottom: 0px;
     height: 40px;
@@ -106,6 +137,7 @@ color:green;
     font-size: x-large;
     border: #43a047 2px solid;
     margin-bottom: 10px;
+    color: wheat;
  }
 
 body {
