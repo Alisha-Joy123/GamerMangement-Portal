@@ -1,0 +1,52 @@
+<h3 style="color: white ;">Access Requests</h3>
+<form action="/SearchAccesRequestList" method="POST" style="color: white;">
+    <label for="department">Department: </label>
+    
+    <select name="department"  style="width: 30%; background-color:black">
+        <option value="All">All</option>
+        <option value="Real -Time Strategy">Real -Time Strategy</option>
+        <option value="Technology">Technology</option>
+        <option value="Board Game">Board Game</option>
+        <option value="Card Game">Card Game</option>
+        <option value="Arcade Game">Arcade Game</option>
+    </select> 
+     <button type="submit"   id="search">Search</button>
+</form>
+
+<table id="UserTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Request Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Request Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td>{{this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.department}}</td>
+            <td>{{this.requestStatus}}</td>
+            <td>
+            
+                <form id="approve" action="/approve" method="POST">
+                    <input type="hidden" name="_id" value="{{this._id}}">
+                    <input type="hidden" name="request" value="Approved">
+                     <input type="submit" value="Approve"></input>
+                </form>
+                <form id="decline" action="/approve" method="POST">
+                    <input type="hidden" name="_id" value="{{this._id}}">
+                    <input type="hidden" name="request" value="Declined">
+                    <input type="submit" value="Decline"></input>
+                </form>
+            
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
