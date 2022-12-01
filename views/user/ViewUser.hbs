@@ -1,0 +1,113 @@
+<h3 style="align-items: centre;">
+    {{viewTitle}}
+</h3>
+<div class="form-container">
+<form action="/RequestAccess" method="POST" class="register-form" autocomplete="off" >
+    <input type="hidden" name="_id" value="{{user._id}}">
+<div class="row">
+    <div class="col-25">
+    <label for="email">E-mail: </label>
+    </div>
+<div class="col-75">
+    <input type="text" name="email"placeholder="Email Address" value="{{user.email}}" disabled/> 
+</div>
+</div>
+<div class="row">
+    <div class="col-25">
+    <label for="email">Password: </label> 
+    </div>
+    <div class="col-75">
+    <input type="password" name="password"  placeholder="Password" id="pwd" value="password" name="password" disabled/> 
+</div>
+</div>
+<div class="row">
+    <div class="col-25">
+    <label for="firstName">First Name: </label>
+    </div>
+    <div class="col-75">
+    <input type="text" name="firstName" placeholder="First Name" value="{{user.firstName}}" disabled/> 
+</div>
+</div>
+<div class="row">
+    <div class="col-25">
+    <label for="lastName">Last Name: </label>
+    </div>
+    <div class="col-75">
+    <input type="text" name="lastName" placeholder="Last Name" value="{{user.lastName}}" disabled/>
+    </div>
+</div>
+    <div class="row">
+    <div class="col-25">
+    <label for="dateOfBirth">DOB: </label>
+    </div>
+    <div class="col-75">
+    <input type="date" name="dateOfBirth" placeholder="Date Of Birth" value="{{user.dateOfBirth}}" disabled/> 
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+    <label for="AccessType">Access Type: </label>
+    </div>
+    <div class="col-75">
+    <select name="userType" disabled>
+        <option value="{{userType}}">{{user.userType}}</option>
+      <option value="Gamer">Regular User</option>
+      <option value="Host">Elevated User</option>
+      <option value="Admin">Administrator</option>
+    </select> 
+</div>
+</div>
+<div class="row">
+    <div class="col-25">
+   <label for="phoneNumber">Phone Number: </label>
+   </div>
+   <div class="col-75">
+    <input type="text" name="phoneNumber" placeholder="Phone Number" value="{{user.phoneNumber}}" disabled/> 
+</div>
+</div>
+<div class="row">
+    <div class="col-25">
+<label for="address">Address: </label>
+</div>
+<div class="col-75">
+    <textarea name="address" placeholder="Address" style="height:80px" disabled>
+        {{user.address}}
+    </textarea>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+    <label for="Department">Department: </label>
+    </div>
+    <div class="col-75">
+    <select name="department" disabled>
+        <option value="{{user.department}}">{{user.department}}</option>
+        <option value="Real -Time Strategy">Real -Time Strategy</option>
+      <option value="Technology">Technology</option>
+      <option value="Board Game">Board Game</option>
+      <option value="Card Game">Card Game</option>
+      <option value="Arcade Game">Arcade Game</option>
+    </select> 
+    </div>
+    </div>
+    <div class="row">
+   <div class="col-75">
+     {{#if Request}}
+    <button type="Submit"   id="Request" style="visibility: {{showEditButton}}">Request Elevated Access</button> 
+    {{/if}} 
+    {{#if Active}}
+    <p style="color: orange;">Access Request Is Pending For Approval</p>
+    {{/if}}
+    {{#if Decline}}
+    <p style="color: red;">Access Request Is Declined</p>
+    {{/if}}
+    {{#if Approved}}
+    <p style="color: green;">Access Request Is Approved</p>
+    {{/if}}
+     </div>
+     <div class="col-25">
+        <a class="Anchor-Button" href="/{{user._id}}">Edit</a> 
+   </div>
+     </div>
+</form>
+</div>
