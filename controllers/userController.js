@@ -21,6 +21,7 @@ function insertRecord(req,res){
     user.userType="Gamer";
     user.password=req.body.password;
     user.email=req.body.email;
+    
         user.save((err,doc)=>{
             if(!err)
             res.redirect('/');
